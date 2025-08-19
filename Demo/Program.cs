@@ -38,6 +38,36 @@
             //Console.WriteLine(employee.Name);
             #endregion
 
+            #region Anonymous Types [AnonymousType Object is an Immutable Object & ..]
+            /// var employee = new { Id = 10, Name = "Mena", Salary = 8_000 };
+            /// Console.WriteLine(employee.GetType());
+            /// Console.WriteLine(employee.ToString());
+            /// 
+            /// // Here not create new Anonymous type, but it will to be the same, But how?!!
+            /// // last anonymous type was generic so, it can be the same
+            /// 
+            /// // The Same Anonymous Type as long as:
+            /// // 1. The Same Properties Naming [Case Sensitive]
+            /// // 2. The Same Properties Order
+            /// var employee01 = new { Id = 10, Name = "Mena", Salary = 8_000F };
+            /// Console.WriteLine(employee01.GetType());
+            /// //----------------------------------------
+            /// 
+            /// // The Object That will be created from "Anonymous Type" => is an Immutable Object
+            /// // [Can't be chagned] => employee1.Id = 10 // That Not Vaid
+            /// 
+            /// // So To Change do this
+            /// 
+            /// //employee = new { Id = 11,employee.Name,employee.Salary};
+            /// employee = employee with { Id = 20 }; // Syntax sugar [C# 10.0 Feature]
+
+            /// // Will Generate New Type Becouse the diffrent Naming or Orders
+            /// var employee = new { Id = 10, Name = "Mena", Salary = 8_000 };
+            /// 
+            /// var product = new { ProductName = "Meat", Price = 120 };
+
+
+            #endregion
 
         }
     }
