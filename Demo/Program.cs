@@ -75,6 +75,31 @@ namespace Demo
             //8956.Reverse().Print();
             #endregion
 
+            #region What is a LINQ?
+            /// // How LINQ transfare to SQL => by ORM (Using Entity Framwork)
+            /// 
+            /// // LINQ: stands for Language-Integrated Query
+            /// // LINQ: +40 Extension Methods for BuiltIn-Interface "IEnumerable" (foreach)
+            /// //     : Named as "LINQ Operators" Existed in Class  "IEnumerable"
+            /// //     : Categorized into 13 Categories. 
+            /// //          => 3  Categories Work Imeduate
+            /// //          => 10 Categories Work Defferd
+            /// //          if i want to Defferd work Imedute => Using with Imedute (Like ToList())
+            /// 
+            /// // Use LINQ Operators against Data (Stored in Sequence), Regardless Data Store (File, Database Provider [SQL Server, MySql, Oracle])
+            /// // Sequence: is an Object from Class Implements "IEnumerable" Interface like List, HashSet, ArrayList, Dictionary,...
+            /// // 1. Local  Sequence: L2O          L2XML
+            /// // 2. Remote Sequence: L2EF(SQL)    L2SQL
+            /// 
+            /// List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            /// 
+            /// //                                  Where Using Like Find
+            /// /*IEnumerable<int>*/ var Odds = Numbers.Where(n => n % 2 == 1); // Defferd Excution
+            /// 
+            /// Numbers.AddRange([11, 12, 13, 14, 15]);
+            /// 
+            /// Odds.PrintAll();
+            #endregion
         }
     }
 }

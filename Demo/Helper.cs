@@ -274,6 +274,10 @@ namespace Demo
             foreach (T item in values) Console.Write($"{item}, ");
             Console.Write("]");
         }
+        public static void PrintAll<T>(this IEnumerable<T> values)
+        {
+            foreach (T item in values) Console.WriteLine(item);
+        }
 
 
     }
