@@ -1,4 +1,6 @@
 ﻿
+using static Demo.ListGenerator;
+
 namespace Demo
 {
     internal class Program
@@ -161,11 +163,15 @@ namespace Demo
             /// Result.PrintAll();
             #endregion
 
-            #endregion 
+            #endregion
 
             #endregion
 
-
+            Console.WriteLine(ProductsList[0]);
+            Console.WriteLine(CustomersList[0]);
+        
+            
+        
         }
     }
 }
