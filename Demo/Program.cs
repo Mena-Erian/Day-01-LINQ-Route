@@ -1,4 +1,5 @@
-﻿namespace Demo
+﻿
+namespace Demo
 {
     internal class Program
     {
@@ -67,6 +68,11 @@
             /// var product = new { ProductName = "Meat", Price = 120 };
 
 
+            #endregion
+
+            #region Extension Method
+            // Should to be in Static Class NonGeneric
+            //8956.Reverse().Print();
             #endregion
 
         }
