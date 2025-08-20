@@ -100,6 +100,40 @@ namespace Demo
             /// 
             /// Odds.PrintAll();
             #endregion
+
+            #region LINQ Syntax
+            List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+            #region Fluent Syntax
+            // 1. Fluent Syntax
+
+            /// 1.1 Call "LINQ Operator" as => Static Method through "Enumerable" Class
+            var OddNumbers = Enumerable.Where(Numbers, i => i % 2 == 1);
+
+            /// 1.2 Call "LINQ Operator" as => Extension Method
+            OddNumbers = Numbers.Where((N) => N % 2 == 1);
+            #endregion
+
+            #region Query Syntax
+            /// // 2. Query Syntax: Query Expression (Like: SQLServer Style)
+            /// /// Starting with keyword "from"
+            /// /// Introducing Range Variable (N): Represents each and every Element in the Input Sequence
+            /// /// Ending with keyword "select" Or "group by"
+            /// 
+            /// /*
+            ///  * select n 
+            ///  * from numbes n
+            ///  * where n %2==1
+            ///  * **/
+            /// // Should Start with from and end with select or group by
+            /// OddNumbers = from N in Numbers
+            ///              where N % 2 == 1
+            ///              select N; 
+            #endregion
+
+            OddNumbers.PrintAll();
+            #endregion
+
         }
     }
 }
