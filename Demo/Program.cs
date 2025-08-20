@@ -75,6 +75,8 @@ namespace Demo
             //8956.Reverse().Print();
             #endregion
 
+            #region LINQ Introduction
+
             #region What is a LINQ?
             /// // How LINQ transfare to SQL => by ORM (Using Entity Framwork)
             /// 
@@ -102,16 +104,16 @@ namespace Demo
             #endregion
 
             #region LINQ Syntax
-            List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
             #region Fluent Syntax
             // 1. Fluent Syntax
 
             /// 1.1 Call "LINQ Operator" as => Static Method through "Enumerable" Class
-            var OddNumbers = Enumerable.Where(Numbers, i => i % 2 == 1);
+            //var OddNumbers = Enumerable.Where(Numbers, i => i % 2 == 1);
 
             /// 1.2 Call "LINQ Operator" as => Extension Method
-            OddNumbers = Numbers.Where((N) => N % 2 == 1);
+            //OddNumbers = Numbers.Where((N) => N % 2 == 1);
             #endregion
 
             #region Query Syntax
@@ -131,8 +133,38 @@ namespace Demo
             ///              select N; 
             #endregion
 
-            OddNumbers.PrintAll();
+            //OddNumbers.PrintAll();
             #endregion
+
+            #region LINQ Excution Ways
+
+            #region Differed Excution
+            /// // 1. Differed Excution (Latest Version of Data)
+            /// List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            /// 
+            /// var Result = Numbers.Where((N) => N % 2 == 1);
+            /// 
+            /// Numbers.AddRange([11, 12, 13, 14, 15]);
+            /// 
+            /// Result.PrintAll();
+            #endregion
+
+
+            #region Immediate Excution
+            /// // 2. Immediate Excution (Element Operators, Casting Operators, Aggregate Operators)
+            /// List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            /// 
+            /// var Result = Numbers.Where((N) => N % 2 == 1).ToList(); /*.First() <= Element Operator */
+            /// 
+            /// Numbers.AddRange([11, 12, 13, 14, 15]);
+            /// 
+            /// Result.PrintAll();
+            #endregion
+
+            #endregion 
+
+            #endregion
+
 
         }
     }
