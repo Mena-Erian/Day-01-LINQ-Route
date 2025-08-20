@@ -167,11 +167,31 @@ namespace Demo
 
             #endregion
 
-            Console.WriteLine(ProductsList[0]);
-            Console.WriteLine(CustomersList[0]);
-        
-            
-        
+
+            #region Filteration (Restruction) Operators - Where
+            //var Result = ProductsList.Where(p => p.UnitsInStock == 0);
+            // Result = from p in ProductsList
+            //             where p.UnitsInStock == 0
+            //             select p;
+
+            //var Result = ProductsList.Where(P => P.UnitsInStock == 0 && P.Category == "Meat/Poultry");
+            //Result = from P in ProductsList
+            //         where P.UnitsInStock == 0 && P.Category == "Meat/Poultry"
+            //         select P;
+
+
+            //Indexed Where
+            /// Valid Only with Fluent Syntax. Can't be Written in Query Expression
+            //var Result = ProductsList.Where((P, I) => P.UnitsInStock == 0 && I < 11);
+            #endregion
+
+            #region TypeOf
+            //var Result = ProductsList.OfType<Product02>();
+            //ProductID:0,ProductName:,Category,UnitPrice:0,UnitsInStock:0, Serial Number: 2323423
+            #endregion
+
+
+            //Result.PrintAll();
         }
     }
 }

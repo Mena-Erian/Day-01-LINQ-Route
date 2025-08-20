@@ -8,7 +8,12 @@ using System.Xml.Linq;
 
 namespace Demo
 {
-
+    class Product02 : Product
+    {
+        public int SerialNumber { get; set; }
+        public override string ToString()
+         => $"{base.ToString()}, Serial Number: {SerialNumber}";
+    }
     class Product : IComparable<Product>
     {
         public long ProductID { get; set; }
@@ -80,7 +85,7 @@ namespace Demo
         {
             ProductsList = new List<Product>()
             {
-
+                new Product02(){ SerialNumber = 2323423},
                       new Product() {ProductID = 1, ProductName = "Chai", Category = "Beverages",
                             UnitPrice = 18.00M, UnitsInStock = 100},
                       new Product{ ProductID = 2, ProductName = "Chang", Category = "Beverages",
