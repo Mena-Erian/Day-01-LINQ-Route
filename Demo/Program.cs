@@ -253,11 +253,43 @@ namespace Demo
             ///                   order = o
             ///               };
             #endregion
-           
+
             #endregion
 
+            #region Ordering Operators
 
-            Result.PrintAll();
+            ///         // Order Asendeing by default
+            /// var Result = ProductsList.Order();
+            /// Result = ProductsList.OrderDescending();
+            /// Result = ProductsList.OrderBy(p => p.UnitsInStock);
+            /// Result = ProductsList.OrderByDescending(p => p.UnitsInStock);
+            /// 
+            /// 
+            /// Result = from p in ProductsList
+            ///          orderby p.UnitsInStock
+            ///          select p;
+            /// 
+            /// Result = from p in ProductsList
+            ///          orderby p.UnitsInStock descending
+            ///          select p;
+
+            /// // IF you want to order after order
+            /// var Result = ProductsList.OrderBy(p => p.UnitsInStock).ThenBy(p => p.UnitPrice);
+            /// 
+            /// Result = from p in ProductsList
+            ///          orderby p.UnitsInStock , p.UnitPrice
+            ///          select p;
+            /// 
+            /// Result = ProductsList.OrderByDescending(p => p.UnitsInStock).ThenByDescending(p => p.UnitPrice);
+            /// 
+            /// Result = from p in ProductsList
+            ///          orderby p.UnitsInStock descending, p.UnitPrice descending
+            ///          select p;
+
+            //var Result = ProductsList.Where(P => P.UnitsInStock == 0).Reverse(); 
+            #endregion
+            
+            //Result.PrintAll();
         }
     }
 }
