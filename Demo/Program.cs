@@ -167,7 +167,6 @@ namespace Demo
 
             #endregion
 
-
             #region Filteration (Restruction) Operators - Where
             //var Result = ProductsList.Where(p => p.UnitsInStock == 0);
             // Result = from p in ProductsList
@@ -190,8 +189,75 @@ namespace Demo
             //ProductID:0,ProductName:,Category,UnitPrice:0,UnitsInStock:0, Serial Number: 2323423
             #endregion
 
+            #region Transormation (Projection) Operators - Select | SelectMany
 
-            //Result.PrintAll();
+            #region Select
+            /// var Result = ProductsList.Select(P => P.ProductName);
+            /// Result =  from P in ProductsList
+            ///           select P.ProductName;
+
+            /// var Result = ProductsList
+            ///         .Where(p => p.UnitsInStock > 0)
+            ///         .Select(p => new { p.ProductID, p.ProductName })
+            ///         ;
+            /// Result = from p in ProductsList
+            ///          where p.UnitsInStock > 0
+            ///          select new { p.ProductID, p.ProductName }; 
+
+            /// var Result = ProductsList
+            ///     .Where(p => p.UnitsInStock != 0)
+            ///     .Select(p => new
+            ///     {
+            ///         p.ProductID,
+            ///         p.ProductName,
+            ///         NewPrice = p.UnitPrice - (p.UnitPrice * 0.2M),
+            /// 
+            ///     });
+            /// 
+            /// Result = from p in ProductsList
+            ///          where p.UnitsInStock != 0
+            ///          select new
+            ///          {
+            ///              p.ProductID,
+            ///              p.ProductName,
+            ///              NewPrice = p.UnitPrice - (p.UnitPrice * 0.2M),
+            /// 
+            ///          };
+
+            /// // Index Select
+            /// var Result = ProductsList.Select((p, i) => new
+            /// {
+            ///     index = i,
+            ///     p = p,
+            /// });
+            #endregion
+
+            #region SelectMany
+            /// var Result = CustomersList.SelectMany(c => c.Orders);
+            /// 
+            /// Result = from c in CustomersList
+            ///          from o in c.Orders
+            ///          select o;
+
+            /// var Result = CustomersList.SelectMany(c => c.Orders, (customer, order) => new
+            /// {
+            ///     customer.CustomerName,
+            ///     order
+            /// });
+            /// 
+            ///  Result = from c in CustomersList
+            ///               from o in c.Orders
+            ///               select new
+            ///               {
+            ///                   c.CustomerName,
+            ///                   order = o
+            ///               };
+            #endregion
+           
+            #endregion
+
+
+            Result.PrintAll();
         }
     }
 }

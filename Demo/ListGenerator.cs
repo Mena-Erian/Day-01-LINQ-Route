@@ -16,6 +16,18 @@ namespace Demo
     }
     class Product : IComparable<Product>
     {
+        public Product()
+        {
+
+        }
+        public Product(Product product)
+        {
+            ProductID = product.ProductID;
+            ProductName = product.ProductName;
+            Category = product.Category;
+            UnitPrice = product.UnitPrice;
+            UnitsInStock = product.UnitsInStock;
+        }
         public long ProductID { get; set; }
         public string ProductName { get; set; }
         public string Category { get; set; }
